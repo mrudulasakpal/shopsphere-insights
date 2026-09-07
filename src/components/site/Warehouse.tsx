@@ -68,8 +68,9 @@ export function Warehouse() {
 
         <div className="relative mt-14 grid items-center gap-6 lg:grid-cols-3">
           <div className="grid gap-6">
-            <Table {...dims[0]} />
-            <Table {...dims[1]} />
+            {dims.slice(0, 2).map((d) => (
+              <Table key={d.name} title={d.name} fields={d.fields} icon={d.icon} />
+            ))}
           </div>
 
           <div className="relative flex flex-col items-center gap-4">

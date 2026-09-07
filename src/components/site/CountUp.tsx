@@ -8,10 +8,10 @@ export function CountUp({
   duration = 1400,
 }: {
   value: number;
-  prefix?: string;
-  suffix?: string;
-  decimals?: number;
-  duration?: number;
+  prefix?: string | undefined;
+  suffix?: string | undefined;
+  decimals?: number | undefined;
+  duration?: number | undefined;
 }) {
   const ref = useRef<HTMLSpanElement>(null);
   const [n, setN] = useState(0);
@@ -22,7 +22,7 @@ export function CountUp({
     let raf = 0;
     const io = new IntersectionObserver(
       ([entry]) => {
-        if (!entry.isIntersecting) return;
+        if (!entry?.isIntersecting) return;
         io.disconnect();
         const start = performance.now();
         const tick = (now: number) => {
