@@ -39,6 +39,7 @@ function Index() {
         <Products />
         <Analytics />
         <Warehouse />
+        <Knowledge />
         <Insights />
         <Pipeline />
         <About />
