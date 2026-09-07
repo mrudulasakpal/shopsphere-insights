@@ -6,6 +6,7 @@ const links = [
   { label: "Products", id: "products" },
   { label: "Analytics", id: "analytics" },
   { label: "Data Warehouse", id: "warehouse" },
+  { label: "Learn DW", id: "knowledge" },
   { label: "About Project", id: "about" },
 ];
 
