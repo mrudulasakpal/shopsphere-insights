@@ -5,6 +5,7 @@ import { Categories } from "@/components/site/Categories";
 import { Products } from "@/components/site/Products";
 import { Analytics } from "@/components/site/Analytics";
 import { Warehouse } from "@/components/site/Warehouse";
+import { Knowledge } from "@/components/site/Knowledge";
 import { Insights } from "@/components/site/Insights";
 import { Pipeline } from "@/components/site/Pipeline";
 import { About } from "@/components/site/About";
@@ -38,6 +39,7 @@ function Index() {
         <Products />
         <Analytics />
         <Warehouse />
+        <Knowledge />
         <Insights />
         <Pipeline />
         <About />
