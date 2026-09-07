@@ -89,9 +89,9 @@ export function Warehouse() {
           </div>
 
           <div className="grid gap-6">
-            <Table {...dims[2]} />
-            <Table {...dims[3]} />
-            <Table {...dims[4]} />
+            {dims.slice(2).map((d) => (
+              <Table key={d.name} title={d.name} fields={d.fields} icon={d.icon} />
+            ))}
           </div>
         </div>
       </div>
