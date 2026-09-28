@@ -1,76 +1,63 @@
-import heroImg from "@/assets/hero.jpg";
-import { ArrowRight, LineChart, Package, Users, IndianRupee, Smile } from "lucide-react";
+import heroImg from "@/assets/hero-v2.jpg";
+import { ArrowRight, ArrowUpRight, Package, Users, IndianRupee, Smile } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import { CountUp } from "./CountUp";
 
-const floats = [
-  { icon: Package, value: 10, suffix: "K+", label: "Products", pos: "left-2 top-8 sm:-left-6" },
-  { icon: Users, value: 25, suffix: "K+", label: "Customers", pos: "right-2 top-24 sm:-right-6" },
-  { icon: IndianRupee, value: 12.5, suffix: "M", prefix: "₹", label: "Sales", pos: "bottom-24 left-2 sm:-left-8" },
-  { icon: Smile, value: 85, suffix: "%", label: "Satisfaction", pos: "bottom-6 right-2 sm:-right-4" },
+const stats = [
+  { icon: Package, value: 10, suffix: "K+", label: "Products" },
+  { icon: Users, value: 25, suffix: "K+", label: "Customers" },
+  { icon: IndianRupee, value: 12.5, suffix: "M", prefix: "₹", label: "Sales" },
+  { icon: Smile, value: 85, suffix: "%", label: "Satisfaction" },
 ];
 
 export function Hero() {
   return (
-    <section id="home" className="relative overflow-hidden bg-[image:var(--gradient-soft)]">
-      <div className="pointer-events-none absolute -left-32 -top-32 size-96 rounded-full bg-primary/10 blur-3xl" />
-      <div className="pointer-events-none absolute -right-24 top-40 size-96 rounded-full bg-primary-glow/10 blur-3xl" />
+    <section id="home" className="relative isolate min-h-[540px] scroll-mt-16 overflow-hidden bg-hero text-hero-foreground sm:min-h-[600px]">
+      <img
+        src={heroImg}
+        alt="E-commerce storefront and sales chart on a laptop beside shopping products"
+        width={1920}
+        height={1080}
+        fetchPriority="high"
+        className="absolute inset-0 -z-20 h-full w-full object-cover object-[67%_center]"
+      />
+      <div className="absolute inset-0 -z-10 bg-[image:var(--hero-overlay)]" />
 
-      <div className="mx-auto grid max-w-7xl items-center gap-14 px-4 py-16 sm:px-6 lg:grid-cols-2 lg:py-24">
-        <div>
-          <span className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-3.5 py-1.5 text-xs font-medium text-muted-foreground shadow-[var(--shadow-card)]">
-            <LineChart className="size-3.5 text-primary" />
+      <div className="mx-auto flex min-h-[540px] max-w-7xl flex-col justify-between px-5 pb-7 pt-16 sm:min-h-[600px] sm:px-8 sm:pb-10 sm:pt-24 lg:px-10">
+        <div className="max-w-[610px]">
+          <span className="inline-flex items-center gap-2 border-l-2 border-hero-accent pl-3 text-[11px] font-semibold uppercase text-hero-foreground/80 sm:text-xs">
             Data Warehouse &amp; Data Mining Project
           </span>
-          <h1 className="mt-5 text-4xl font-semibold leading-[1.08] tracking-tight sm:text-5xl lg:text-6xl">
-            E-Commerce Sales{" "}
-            <span className="bg-[image:var(--gradient-primary)] bg-clip-text text-transparent">
-              Data Warehouse
-            </span>
+          <h1 className="mt-6 text-4xl font-semibold leading-[1.08] sm:text-5xl lg:text-6xl">
+            E-Commerce Sales <span className="text-hero-accent">Data Warehouse.</span>
           </h1>
-          <p className="mt-5 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg">
+          <p className="mt-5 max-w-lg text-sm leading-relaxed text-hero-foreground/85 sm:text-lg">
             Transforming e-commerce sales data into meaningful business insights using Data
             Warehousing and Analytics.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
-            <a
-              href="#products"
-              className="group inline-flex items-center gap-2 rounded-full bg-[image:var(--gradient-primary)] px-6 py-3 text-sm font-semibold text-primary-foreground shadow-[var(--shadow-card)] transition-all hover:shadow-[var(--shadow-lift)]"
-            >
-              Explore Products
-              <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" />
-            </a>
-            <a
-              href="#analytics"
-              className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-6 py-3 text-sm font-semibold transition-colors hover:bg-accent hover:text-accent-foreground"
-            >
-              View Analytics
-            </a>
+            <Button asChild size="lg" className="h-11 rounded-sm bg-hero-accent px-5 text-hero-accent-foreground hover:bg-hero-accent/90">
+              <a href="#products">Explore Products <ArrowRight /></a>
+            </Button>
+            <Button asChild size="lg" variant="outline" className="h-11 rounded-sm border-hero-foreground/50 bg-transparent px-5 text-hero-foreground hover:bg-hero-foreground/10 hover:text-hero-foreground">
+              <a href="#analytics">View Analytics <ArrowUpRight /></a>
+            </Button>
           </div>
         </div>
-
-        <div className="relative">
-          <div className="overflow-hidden rounded-3xl border border-border bg-card shadow-[var(--shadow-lift)]">
-            <img
-              src={heroImg}
-              alt="Online shopping on a laptop with an e-commerce sales dashboard, shopping bags and products"
-              width={1200}
-              height={912}
-              className="h-full w-full object-cover"
-            />
-          </div>
-          {floats.map((f) => (
+        <div className="grid grid-cols-2 gap-y-4 border-t border-hero-foreground/30 pt-5 sm:grid-cols-4 sm:gap-5">
+          {stats.map((f) => (
             <div
               key={f.label}
-              className={`absolute ${f.pos} flex items-center gap-2.5 rounded-2xl border border-border bg-card/95 px-3.5 py-2.5 shadow-[var(--shadow-card)] backdrop-blur animate-in fade-in slide-in-from-bottom-2`}
+              className="flex min-w-0 items-center gap-2.5"
             >
-              <span className="grid size-8 place-items-center rounded-xl bg-accent text-accent-foreground">
-                <f.icon className="size-4" />
+              <span className="grid size-8 shrink-0 place-items-center border border-hero-foreground/25 text-hero-accent sm:size-9">
+                <f.icon className="size-4" aria-hidden="true" />
               </span>
               <span className="leading-tight">
-                <span className="block text-sm font-semibold">
+                <span className="block text-base font-semibold sm:text-lg">
                   <CountUp value={f.value} prefix={f.prefix} suffix={f.suffix} decimals={f.value % 1 ? 1 : 0} />
                 </span>
-                <span className="block text-[11px] text-muted-foreground">{f.label}</span>
+                <span className="block text-[11px] text-hero-foreground/75">{f.label}</span>
               </span>
             </div>
           ))}
