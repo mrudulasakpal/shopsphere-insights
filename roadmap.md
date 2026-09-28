@@ -1,4 +1,5 @@
 # Roadmap
 
 - [x] Write a recreation prompt describing the built static website (original request)
-- [ ] GitHub push: guide user to connect GitHub via Lovable editor (cannot push repo code from chat — Git sync is an editor UI action)
+- [ ] Refresh the homepage presentation and mark this iteration v2
+- [ ] Explain GitHub sync and how to create a v2 tag/release in the connected repository
