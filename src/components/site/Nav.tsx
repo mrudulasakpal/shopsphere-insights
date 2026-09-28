@@ -21,7 +21,7 @@ export function Nav() {
             <BarChart3 className="size-5" />
           </span>
           <span className="leading-tight">
-            <span className="block text-[15px] font-semibold tracking-tight">ShopSphere Analytics</span>
+            <span className="block text-[15px] font-semibold">ShopSphere Analytics <span className="ml-1 text-[10px] font-bold uppercase text-primary">v2</span></span>
             <span className="hidden text-[11px] text-muted-foreground sm:block">
               E-Commerce Sales Data Warehouse
             </span>
