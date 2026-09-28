@@ -26,7 +26,7 @@ export function Hero() {
       <div className="mx-auto flex min-h-[540px] max-w-7xl flex-col justify-between px-5 pb-7 pt-16 sm:min-h-[600px] sm:px-8 sm:pb-10 sm:pt-24 lg:px-10">
         <div className="max-w-[610px]">
           <span className="inline-flex items-center gap-2 border-l-2 border-hero-accent pl-3 text-[11px] font-semibold uppercase text-hero-foreground/80 sm:text-xs">
-            Data Warehouse &amp; Data Mining Project <span className="text-hero-accent">/ v2</span>
+            Data Warehouse &amp; Data Mining Project
           </span>
           <h1 className="mt-6 text-4xl font-semibold leading-[1.08] sm:text-5xl lg:text-6xl">
             E-Commerce Sales <span className="text-hero-accent">Data Warehouse.</span>
